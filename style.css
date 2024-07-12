@@ -1,0 +1,707 @@
+body {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    margin : 0 auto;
+    position: relative;
+    padding: 0 auto;
+    overflow-x: hidden;
+}
+
+.navlogo {
+    width: 70px;
+    height: 70px;
+
+}
+.navmenu {
+    width: 100%;
+    height: 75px;
+    background-color: black;
+    display: flex;
+    position: sticky;
+    justify-content: space-around;
+    
+    top: 0;
+    z-index: 1000;
+}
+.mainbackground {
+    width: 100%;
+    height: 100%;
+    display: block ;
+    font-size: 40px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    overflow: hidden;
+    
+}
+.contentwrap {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    position: absolute;
+    z-index: 5;
+    text-align: center;
+    bottom: 15%;
+    
+}
+.contentwrap h2{
+    height: 28px;
+
+}
+.navlogowrap {
+    display: inline-block;
+    width: 60%;
+    
+    margin-left: 20px;
+}
+.navlinks1 {
+    width:40%;
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+}
+
+.menu-btn {
+    display: none;
+    position: relative;
+    width: 50px;
+    height: 100%;
+   
+    justify-content: center;
+    align-items: center;
+    transition: all 0.8s ease-in-out;
+    overflow: hidden;
+    z-index: 5;
+}
+.menu-btn_line {
+    width: 45px; 
+    height: 5px;
+    /*background-color: black;*/
+    border-radius: 10px;
+    transition: all 0.5s ; 
+}
+.menu-btn_line::before , 
+.menu-btn_line::after {
+    content: '';
+    position: absolute;
+    width: 45px;
+    height: 5px;
+    background-color: white;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out; 
+}
+.menu-btn_line::before {
+    transform: translateY(-8px);
+}
+.menu-btn_line::after {
+    transform: translateY(8px);
+}
+/*animation*/
+.menu-btn.open .menu-btn_line {
+    transform: translateX(-0px);
+    background: transparent;
+    transform: rotate(360deg);
+}
+.menu-btn.open .menu-btn_line::before {
+   transform: rotate(45deg) translate(0px, -0px); 
+}
+.menu-btn.open .menu-btn_line::after {
+    transform: rotate(-45deg) translate(0px, 0px);
+}
+.navmenudropdown {
+    width: 100%;
+    height: 100vh;
+    background-color: red;
+    position: fixed;
+    left:-100%;
+    top:0;
+    z-index: -1;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    flex-direction: column;
+    
+}
+.menu-btn.open .navmenudropdown {
+   width: 100%;
+    left: 0;
+    top:0%;
+    z-index: -1;
+    background-color: black;
+}
+.navlinks {
+    width:100%;
+    height: 80px;
+    color: rgb(230, 231, 231);
+    font-size: 25px;
+    text-align: center;
+}
+.navlink {
+    justify-content: center;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(230, 231, 231);
+    font-size: 20px;
+    text-align: center;
+}
+.logowrapper {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    gap: 15px;
+    align-items: space-around;
+    justify-content: space-around;
+}
+@media only screen and (max-width: 900px) {
+    .menu-btn{
+        display: flex;
+        
+    }
+    .navlinks1 {
+        display: none;
+    }
+    }
+.registerbtnwrap {
+    display: flex;
+    width: fit-content;
+    padding: 5px;
+    margin: 0;
+}
+.btn {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 140px;
+    height: 42px;
+    background-color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+}
+.registerbtn {
+    width: 140px;
+    height: 50px;
+    padding: 0;
+    transition: 0.3s ease-in-out all;
+}
+.registerbtn:hover {
+    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(50%) contrast(50%);
+}
+.blackgradientcover {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height:100%;
+    bottom: 1%;
+
+}
+.backgroundimg {
+    width: 100%;
+    height: 100vh;
+    opacity: 0.8;
+}
+/*slider section code- home page*/
+.novabadge {
+    width: 80px !important;
+    height: 80px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.novabadge img {
+    width: 80px;
+    height: 80px;
+}
+.novaslider {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    
+}
+.novaslides {
+    position: absolute;
+    width: 500%;
+    height: 100%;
+    display: flex;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.novaslides input {
+   display: none;
+}
+/*.nova-slide input:checked {
+    accent-color: red;
+}*/
+.nova-slide {
+    width : 20%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    transition: 0.8s ease-in;
+    overflow: hidden;
+    position: relative;
+}
+
+/* .nova-slide width need to set manually 
+to make responsive depends on slide count
+mine is 5 so 500% divide by20%
+*/
+.novainfo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    padding: 10%;
+    flex-direction: column;
+    position: relative;
+    gap: 15;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+    top: 15%;
+}
+.novainfo.reveal{
+    opacity: 1;
+}
+.novainfo h3 {
+    color: white;
+    font-size: 40px;
+    line-height: 20px;
+    margin: 10px;
+}
+.novainfo p{
+    color: white;
+    font-size: 20px;
+    line-height: 10px;
+}
+/* More info btn from novainfo*/
+.moreinfo-btn {
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    position: relative;
+    border: 1px solid rgba(148, 148, 148, 0.507);
+    text-align: center;
+    line-height: 45px;
+    overflow: hidden;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+}
+
+.moreinfo-btn::before {
+    content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    left: -100%;
+    background-color: white;
+    transition: all  0.5s ; /* Add transition for smooth animation */
+}
+.moreinfo-btn:hover {
+    color: black;
+    border: 1px solid white;
+    display: block;
+}
+.moreinfo-btn:hover::before {
+    left: 0%;
+    display: block; /* Move the pseudo-element to the right on hover */
+}
+.backgroundslide {
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: background-image 0.3s ;
+    opacity: 0.5;
+}
+.nova-slide img{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 20%;
+    position: absolute;
+z-index: 15;
+}
+/*css for manual slide navigation btn */
+.nav-res {
+    width: 100vw;
+    height:100%;
+    position: absolute;
+    
+}
+.navigation-manual {
+    position: absolute;
+    
+    width: 100%;
+    height: 15px;
+    bottom: 50px;
+    display: flex;
+    justify-content: center;
+    z-index: 20;
+   
+}
+
+.manual-btn {
+    border: 2px solid rgb(190, 5, 5);
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+    
+}
+.manual-btn:not(:last-child) {
+    margin-right: 40px;
+
+}
+.manual-btn:focus {
+    border:10px solid red;
+
+}
+.manual-btn:hover {
+    background: rgb(190, 5, 5);
+    
+
+}
+.manual-btn:checked {
+    accent-color: #FF0000;
+    border:10px solid red;
+
+}
+#nova-radio1:checked ~ .main{
+    margin-left: 0%;
+    
+}
+#nova-radio2:checked ~ .main{
+    margin-left: -20%;
+   
+}
+#nova-radio3:checked ~ .main{
+    margin-left: -40%;
+    
+}
+#nova-radio4:checked ~ .main{
+    margin-left: -60%;
+}
+#nova-radio5:checked ~ .main{
+    margin-left: -80%;
+}
+/*change to indicator radio*/
+.nova-navigation-auto{
+    width: 100vw;
+    height:15px;
+    position: absolute;
+    display: flex;
+    bottom: 50px;
+    justify-content: center;
+    z-index: 15;
+}
+.nova-navigation-auto div {
+    border: 2px solid rgb(190, 5, 5);
+    padding: 5px;
+    border-radius: 50px;
+    transition: 1s;
+    
+}
+.nova-navigation-auto div:not(:last-child) {
+    margin-right: 40px;
+}
+#nova-radio1:checked ~ .nova-navigation-auto .nova-auto1{
+   background: rgb(190, 5, 5);
+}
+#nova-radio2:checked ~ .nova-navigation-auto .nova-auto2{
+    background: rgb(190, 5, 5);
+}
+#nova-radio3:checked ~ .nova-navigation-auto .nova-auto3{
+    background: rgb(190, 5, 5);
+} 
+#nova-radio4:checked ~ .nova-navigation-auto .nova-auto4{
+    background: rgb(190, 5, 5);
+}
+#nova-radio5:checked ~ .nova-navigation-auto .nova-auto5{
+    background: rgb(190, 5, 5); 
+}
+#nova-radio1:checked ~ .backgroundslide{
+    background-image: url(./nova1bg.jpg)
+ }
+ #nova-radio2:checked ~ .backgroundslide{
+    background-image: url(./nova2bg.jpg);
+ }   
+ #nova-radio3:checked ~ .backgroundslide{
+    background-image: url(./nova3bg.jpg);
+ }   
+ #nova-radio4:checked ~ .backgroundslide{
+    background-image: url(./nova4bg.jpg);
+ }   
+ #nova-radio5:checked ~ .backgroundslide{
+    background-image: url(./nova5bg.jpg);
+ }   
+ 
+/*patchlist section style*/
+.patchlist {
+    width: 100%;
+    height: 500px;
+    backdrop-filter: blur(40px);
+    display: flex;
+    border-top: 3px solid  rgba(148, 148, 148, 0.507);
+}
+.latestshowcase {
+    background-color: black;
+    width: 50%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.latestshowcase h2{
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 40px;
+    position: absolute;
+    left: 30px;
+    top: -18px;
+}
+.latestup_card {
+    width: 80%;
+    height: 70%;
+    background-color: rgba(255, 255, 255, 0.425);
+    border-radius: 10px;
+    position: relative;
+    border: 1px solid rgba(148, 148, 148, 0.507);
+    overflow: hidden;
+}
+.latestup_card div{
+    position: absolute;
+    z-index: 10;
+    height:50%;
+    bottom:0;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+   padding: 5px;
+   overflow: hidden;
+}
+.cardheading {
+    display: flex;
+    
+    display: block;
+    max-height: 50px;
+    
+    font-size: 20px;
+    overflow: hidden;
+    line-height: 20px;
+    text-align: start;
+}
+.cardheading h3 {
+    width: 100%;
+    height: 16px;
+    font-size: 20px;
+    line-height: 17px;
+    text-align: start;
+    color: white;
+}
+.date_wrapdiv {
+    width: 100%;
+    height: 20px;
+    display: flex;
+    justify-content: center; 
+}
+.latestup_card img{
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    position: absolute;
+    z-index: 0;
+}
+.latestup_card div h6{
+   display: inline;
+    font-size: 16px;
+    line-height: 16px;
+    width: 100%;
+    height: 20px;
+    padding: 0;
+    margin: 10px;
+    color: white;
+}
+.btn_wrap {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: max-content;
+    max-height: 60px;
+}
+.smallpatchlistwrap {
+    padding: 10px;
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+   
+}
+.smallpatchlist {
+  
+    width: 50%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(40px);
+}
+.smallpatch {
+    width: 100%;
+    height: 70px;
+    background-color: red;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid rgba(148, 148, 148, 0.507);
+    transition: 0.3s all;
+    overflow: hidden;
+}
+.smallpatch_thumbnail{
+    width: 100px; 
+    height: 100%;
+}
+.smallpatch_content {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    padding: 0px 20px;
+}
+.moreinfo-patch {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    text-align: center;
+    border: 1px solid rgba(148, 148, 148, 0.507);
+    transition: all 0.3s ease-in-out;
+    font-size: 16px;
+    cursor: pointer;
+}
+.moreinfo-patch:hover {
+    border: 2px solid black;
+    font-size: 20px;
+    color: black;
+    transform: rotate(360deg);
+}
+.headingwrap {
+    font-size: 20px;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+.smallpatch:hover {
+    transform: translateY(-5px);
+    border: 2px solid white;
+}
+.subscribeformsection {
+    width: 100%;
+    height: 400px;
+    
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.subscribeformsection form{
+width: 80%;
+height: 80%;
+background-color: rgb(255, 255, 255);
+border-radius: 20px;
+color: black;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+gap: 25px;
+transition: 0.3s;
+}
+.subscribeformsection form:hover {
+    transform: translateY(-10px);
+    -webkit-box-shadow: 5px 5px 10px 1px rgba(255,0,0,0.5);
+    -moz-box-shadow: 5px 5px 10px 1px rgba(255,0,0,0.5);
+    box-shadow: 5px 5px 10px 3px rgba(255,0,0,0.5);
+}
+.subscribeformsection form input{
+    width: 50%;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid rgba(148, 148, 148, 0.507);
+    background-color: rgba(255, 255, 255, 0);
+    padding-left: 10px;
+    transition: 0.5s;
+    
+}
+.subscribeformsection form input::placeholder{
+    color: black;
+}
+.subscribeformsection form input:hover {
+    width: 45%;
+    border: 2px solid black;
+}
+.subscribeformsection form button{
+    width: 120px;
+    height: 42px;
+    border-radius: 10px;
+    background-color: #FFFFFF00;
+    border: 1px solid rgba(148, 148, 148, 0.507);
+    transition: 0.3s all;
+}
+.subscribeformsection form button:hover {
+    width: 150px;
+    background-color: white;
+    border: 2px solid black;
+}
+.footer_links {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+}
+.copyright {
+    color: white;
+    font-size: 20px;
+    height: 30px;
+    line-height: 20px;
+    text-align: center;
+    width: 100%;
+}
+@media only screen and (max-width: 900px) {
+    .footer_links {
+        display: block;
+    }
+    }
